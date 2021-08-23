@@ -1,0 +1,40 @@
+os: linux
+dist: xenial
+language: java
+
+variables:
+  MAVEN_OPTS: "-Dhttps.protocols=TLSv1.2  -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN -Dorg.slf4j.simpleLogger.showDateTime=true -DskipTests=true"
+  MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true -DdeployAtEnd=true"
+
+# jdk
+jdk:
+  - openjdk8
+
+before_install:
+  - cp settings.xml $HOME/.m2/settings.xml
+
+# verify the build
+.verify: &verify
+  stage: test
+  script:
+    - 'mvn $MAVEN_CLI_OPTS verify'
+  except:
+    - master
+
+# Verify merge requests using JDK8
+verify:
+  <<: *verify
+  except:
+    - master
+
+build:
+  stage: build
+  script:
+    - mvn clean install
+
+deploy:
+  on:
+    all_branches: true
+  stage: deploy
+  provider: script
+  script: 'mvn $MAVEN_CLI_OPTS deploy'
