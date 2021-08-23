@@ -8,7 +8,6 @@ import java.util.Arrays;
 
 /**
  * Meta utility class used for handling method/class byte data.
- *
  * @author bfu4
  * @since v1.0
  */
@@ -17,12 +16,13 @@ public final class Meta {
     /**
      * Private the constructor for the utility class.
      */
-    private Meta() { }
+    private Meta() {
+    }
 
     /**
      * Get the return type internal description.
-     * @param method    method to get the return type internal description of
-     * @return          return type internal description
+     * @param method method to get the return type internal description of
+     * @return return type internal description
      */
     public static String getReturnTypeInternal(@NotNull final Method method) {
         return method.getReturnType().getName();
@@ -56,8 +56,8 @@ public final class Meta {
 
     /**
      * Get the signature of a class.
-     * @param clazz     class
-     * @return          signature
+     * @param clazz class
+     * @return signature
      */
     public static String getClassSignature(final Class<?> clazz) {
         Object typeInstanceArray = Array.newInstance(clazz, 0);

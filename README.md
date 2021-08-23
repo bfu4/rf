@@ -19,7 +19,7 @@ if you don't know what that means, glhf
 
 <dependency>
     <groupId>com.localhost22</groupId>
-    <artifactId>rt</artifactId>
+    <artifactId>rf</artifactId>
     <version>1.0</version>
 </dependency>
 ```
