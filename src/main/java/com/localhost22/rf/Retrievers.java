@@ -47,10 +47,32 @@ public enum Retrievers {
         return (T) this.retriever.get(clazz, identifier);
     }
 
+    /**
+     * Get object by class name.
+     * @param className  name of the class.
+     * @param identifier identifier of the item to retrieve.
+     * @param <T>        mutable type constraint
+     * @return value
+     */
     public <T> T get(final String className, final String identifier) {
         try {
             Class<?> clazz = Class.forName(className);
             return get(clazz, identifier);
+        } catch (ClassNotFoundException e) {
+            return null;
+        }
+    }
+
+    /**
+     * Get class by a signature such as {@code java/lang/Object} or {@code java.lang.Object}.
+     * @param signature signature
+     * @param <T>       type constraint
+     * @return class
+     */
+    @SuppressWarnings("unchecked")
+    public static <T> Class<T> getClassBySignature(final String signature) {
+        try {
+            return (Class<T>) Class.forName(signature.replace('/', '.'));
         } catch (ClassNotFoundException e) {
             return null;
         }

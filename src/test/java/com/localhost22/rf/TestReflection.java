@@ -71,4 +71,13 @@ public class TestReflection {
         Assertions.assertNotNull(write);
     }
 
+    @Test
+    public void testClassGet() {
+        String className = "sun/misc/Unsafe";
+        String classObjectSignature = "L" + className + ";";
+        Class<?> clazz = Retrievers.getClassBySignature(className);
+        Assertions.assertNotNull(clazz);
+        Assertions.assertEquals(classObjectSignature, Meta.getClassSignature(clazz));
+    }
+
 }
