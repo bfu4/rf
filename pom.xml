@@ -22,13 +22,9 @@
         </developer>
     </developers>
 
-    <distributionManagement>
-        <repository>
-            <id>public</id>
-            <name>public</name>
-            <url>https://nexus.sleeeepyti.me/repository/public</url>
-        </repository>
-    </distributionManagement>
+    <scm>
+    	<url>https://svn.apache.org/viewvc/maven</url>
+    </scm>
 
     <build>
         <defaultGoal>clean package</defaultGoal>
@@ -75,6 +71,8 @@
                     </execution>
                 </executions>
             </plugin>
+<!--
+	
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -93,7 +91,10 @@
                     <nexusUrl>https://nexus.sleeeepyti.me/repository/public</nexusUrl>
                     <skipStaging>true</skipStaging>
                 </configuration>
-            </plugin>
+            </plugin> 
+
+-->
+
             <!-- Checkstyle -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
