@@ -12,11 +12,6 @@ if you don't know what that means, glhf
 
 ### Maven
 ```xml
-<repository>
-    <id>public</id>
-    <url>https://nexus.sleeeepyti.me/repository/public</url>
-</repository>
-
 <dependency>
     <groupId>com.localhost22</groupId>
     <artifactId>rf</artifactId>
