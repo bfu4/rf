@@ -16,6 +16,7 @@ before_install:
   - sudo apt-get install gnupg2 --yes
   - openssl aes-256-cbc -K $encrypted_446e43e9c35a_key -iv $encrypted_446e43e9c35a_iv -in .build/token.gpg.enc -out .build/token.gpg -d
   - echo $GPG_PASSPHRASE | gpg --import .build/token.gpg
+  - export GPG_TTY=$(tty)
 
 # verify the build
 .verify: &verify
