@@ -4,18 +4,25 @@
    <groupId>com.localhost22</groupId>
    <artifactId>rf</artifactId>
    <version>1.0</version>
+
+   <name>rf</name>
+   <description>Simple reflection based on java.util.Function s and friendly-to-use enums</description>
+   <url>https://github.com/bfu4/rf</url>
+
    <properties>
       <maven.compiler.source>1.8</maven.compiler.source>
       <maven.compiler.target>1.8</maven.compiler.target>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <checkstyle.path>checkstyle.xml</checkstyle.path>
    </properties>
+
    <developers>
       <developer>
          <name>Bella Fusari</name>
          <email>bella@localhost22.com</email>
       </developer>
    </developers>
+   
    <distributionManagement>
       <snapshotRepository>
          <id>ossrh</id>
@@ -26,6 +33,12 @@
          <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
       </repository>
    </distributionManagement>
+
+   <scm>
+      <connection>scm:git:git@github.com:bfu4/rf.git</connection>
+      <tag>HEAD</tag>
+   </scm>
+   
    <build>
       <defaultGoal>clean package</defaultGoal>
       <plugins>
