@@ -36,6 +36,7 @@
 
    <scm>
       <connection>scm:git:git@github.com:bfu4/rf.git</connection>
+      <url>scm:git:git://github.com/bfu4/rf.git</url>
       <tag>HEAD</tag>
    </scm>
    
